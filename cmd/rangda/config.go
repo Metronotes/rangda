@@ -6,12 +6,12 @@ import (
 )
 
 type ConfigSession struct {
-	SecretKeyBase []byte `required:"true"`
+	SecretKeyBase string `required:"true" yaml:"secret_key_base"`
 }
 
 type Config struct {
-	Address string `default:":8080" env:"RANGDA_ADDRESS"`
-	Session ConfigSession
+	Address string        `default:":8080" env:"RANGDA_ADDRESS"`
+	Session ConfigSession `required:"true"`
 }
 
 func LoadConfig(path string) (*Config, error) {

@@ -28,6 +28,7 @@ func initArgs() *args {
 	// Fill default values
 	args.Config = "rangda.conf"
 
+	// parses command line
 	arg.MustParse(args)
 
 	return args
